@@ -1,4 +1,4 @@
-package com.zwng.schooldirectory.model;
+package com.zwng.android_school_directory.model;
 
 public class EmployeeModel {
     private String id, name, role, email, phoneNumber, avatar, departmentId;

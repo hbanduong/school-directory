@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.zwng.android_school_directory.R;
-import com.zwng.schooldirectory.model.DepartmentModel;
+import com.zwng.android_school_directory.model.DepartmentModel;
 
 import java.util.List;
 
@@ -35,6 +35,7 @@ public class DepartmentAdapter extends ArrayAdapter<DepartmentModel> {
 
         DepartmentModel departmentModel = departmentModelList.get(position);
         TextView tvName = convertView.findViewById(R.id.tvName);
+        tvName.setText(departmentModel.getName());
         return convertView;
     }
 }

@@ -11,7 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.zwng.android_school_directory.adapter.DepartmentAdapter;
-import com.zwng.schooldirectory.model.DepartmentModel;
+import com.zwng.android_school_directory.model.DepartmentModel;
 
 import java.util.List;
 

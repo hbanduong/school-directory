@@ -1,6 +1,11 @@
-package com.zwng.schooldirectory.model;
+package com.zwng.android_school_directory.model;
 
-public class DepartmentModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class DepartmentModel implements Parcelable {
     private String id, name, email, website, logo, address, phoneNumber;
 
     public DepartmentModel() {
@@ -19,6 +24,28 @@ public class DepartmentModel {
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
+
+    protected DepartmentModel(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        email = in.readString();
+        website = in.readString();
+        logo = in.readString();
+        address = in.readString();
+        phoneNumber = in.readString();
+    }
+
+    public static final Creator<DepartmentModel> CREATOR = new Creator<DepartmentModel>() {
+        @Override
+        public DepartmentModel createFromParcel(Parcel in) {
+            return new DepartmentModel(in);
+        }
+
+        @Override
+        public DepartmentModel[] newArray(int size) {
+            return new DepartmentModel[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -74,5 +101,21 @@ public class DepartmentModel {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(email);
+        dest.writeString(website);
+        dest.writeString(logo);
+        dest.writeString(address);
+        dest.writeString(phoneNumber);
     }
 }

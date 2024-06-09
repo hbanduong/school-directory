@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.zwng.android_school_directory.R;
-import com.zwng.schooldirectory.model.EmployeeModel;
+import com.zwng.android_school_directory.model.EmployeeModel;
 
 import java.util.List;
 

@@ -5,180 +5,179 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddDepartmentActivity"
+    tools:context=".activity.DepartmentDetailActivity"
     android:orientation="vertical"
-    android:layout_marginHorizontal="10dp">
+    android:layout_margin="10dp">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="THÊM ĐƠN VỊ"
+        android:text="THÔNG TIN ĐƠN VỊ"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
+            android:text="Mã đơn vị: "
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
             android:text="Mã đơn vị"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
-
-        <EditText
-            android:id="@+id/edtId"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Tên đơn vị"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtName"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Email"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtEmail"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Website"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtWebsite"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Logo"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtLogo"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Địa chỉ"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtAddress"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="8"
-        android:layout_marginTop="10dp">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Số điện thoại"
+            android:text="Mã đơn vị: "
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
-        <EditText
-            android:id="@+id/edtPhoneNumber"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:text="Mã đơn vị"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lưu"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
 </LinearLayout>

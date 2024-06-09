@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.zwng.android_school_directory.R;
-import com.zwng.schooldirectory.model.DepartmentModel;
+import com.zwng.android_school_directory.model.DepartmentModel;
 import com.zwng.android_school_directory.util.FirebaseDatabaseHelper;
 
 public class AddDepartmentActivity extends AppCompatActivity {
