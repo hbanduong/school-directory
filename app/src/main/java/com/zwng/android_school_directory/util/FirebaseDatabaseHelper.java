@@ -28,7 +28,12 @@ public class FirebaseDatabaseHelper {
         dRefEmployee = firebaseDatabase.getReference("employee");
     }
 
-    public void loadDepartment(List<DepartmentModel> departmentModelList, DepartmentAdapter departmentAdapter) {
+    public interface DataStatus {
+        void departmentIsLoaded(List<DepartmentModel> departments);
+        void employeeIsLoaded(List<EmployeeModel> employees);
+    }
+
+    public void loadDepartment(List<DepartmentModel> departmentModelList, DataStatus dataStatus) {
         dRefDepartment.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -37,7 +42,7 @@ public class FirebaseDatabaseHelper {
                     DepartmentModel departmentModel = dataSnapshot.getValue(DepartmentModel.class);
                     departmentModelList.add(departmentModel);
                 }
-                departmentAdapter.notifyDataSetChanged();
+                dataStatus.departmentIsLoaded(departmentModelList);
             }
 
             @Override
@@ -82,7 +87,7 @@ public class FirebaseDatabaseHelper {
         addDepartment(updatedDepartment, view);
     }
 
-    public void loadEmployee(List<EmployeeModel> employeeModelList, EmployeeAdapter employeeAdapter) {
+    public void loadEmployee(List<EmployeeModel> employeeModelList, DataStatus dataStatus) {
         dRefEmployee.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -91,7 +96,7 @@ public class FirebaseDatabaseHelper {
                     EmployeeModel employeeModel = dataSnapshot.getValue(EmployeeModel.class);
                     employeeModelList.add(employeeModel);
                 }
-                employeeAdapter.notifyDataSetChanged();
+                dataStatus.employeeIsLoaded(employeeModelList);
             }
 
             @Override

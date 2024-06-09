@@ -23,6 +23,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.zwng.android_school_directory.R;
 import com.zwng.android_school_directory.fragment.DepartmentFragment;
 import com.zwng.android_school_directory.fragment.EmployeeFragment;
+import com.zwng.android_school_directory.model.DepartmentModel;
+import com.zwng.android_school_directory.util.SearchHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,6 +66,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         loadFragment(new DepartmentFragment());
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frameLayout);
+                if (currentFragment instanceof SearchHandler) {
+                    ((SearchHandler) currentFragment).onSearchQuery(newText);
+                }
+                return true;
+            }
+        });
+
+        searchView.clearFocus();
     }
 
     private void loadFragment(Fragment fragment) {
