@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.zwng.android_school_directory.R;
-import com.zwng.android_school_directory.activity.DepartmentDetailActivity;
+import com.zwng.android_school_directory.activity.DetailDepartmentActivity;
 import com.zwng.android_school_directory.adapter.DepartmentAdapter;
 import com.zwng.android_school_directory.model.DepartmentModel;
 import com.zwng.android_school_directory.util.FirebaseDatabaseHelper;
@@ -48,7 +48,7 @@ public class DepartmentFragment extends Fragment {
         lvDepartment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(), DepartmentDetailActivity.class);
+                Intent intent = new Intent(view.getContext(), DetailDepartmentActivity.class);
 
                 intent.putExtra("department", departmentModelList.get(position));
                 startActivity(intent);

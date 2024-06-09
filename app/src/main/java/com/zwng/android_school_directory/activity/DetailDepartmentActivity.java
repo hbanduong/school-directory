@@ -2,7 +2,6 @@ package com.zwng.android_school_directory.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,19 +15,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.google.android.material.snackbar.Snackbar;
 import com.zwng.android_school_directory.R;
 import com.zwng.android_school_directory.model.DepartmentModel;
 import com.zwng.android_school_directory.util.FirebaseDatabaseHelper;
 
-public class DepartmentDetailActivity extends AppCompatActivity {
+public class DetailDepartmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_department_detail);
+        setContentView(R.layout.activity_detail_department);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -53,7 +50,6 @@ public class DepartmentDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         DepartmentModel department = (DepartmentModel) intent.getParcelableExtra("department");
 
-
         tvId.setText(department.getId());
         tvName.setText(department.getName());
         tvEmail.setText(department.getEmail());
@@ -72,7 +68,7 @@ public class DepartmentDetailActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(DepartmentDetailActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(DetailDepartmentActivity.this);
                 View dialogView = getLayoutInflater().inflate(R.layout.dialog_delete, null);
                 builder.setView(dialogView);
 
@@ -81,8 +77,8 @@ public class DepartmentDetailActivity extends AppCompatActivity {
                 dialogView.findViewById(R.id.btnConfirm).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        firebaseDatabaseHelper.deleteDepartment(department.getId(), v);
-                        Intent intentBack = new Intent(DepartmentDetailActivity.this, MainActivity.class);
+                        firebaseDatabaseHelper.deleteDepartment(department);
+                        Intent intentBack = new Intent(DetailDepartmentActivity.this, MainActivity.class);
                         startActivity(intentBack);
                     }
                 });
@@ -95,6 +91,16 @@ public class DepartmentDetailActivity extends AppCompatActivity {
                 });
 
                 dialog.show();
+            }
+        });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEdit = new Intent(DetailDepartmentActivity.this, UpdateDepartmentActivity.class);
+
+                intentEdit.putExtra("department", department);
+                startActivity(intentEdit);
             }
         });
     }

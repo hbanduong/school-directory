@@ -1,6 +1,11 @@
 package com.zwng.android_school_directory.model;
 
-public class EmployeeModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class EmployeeModel implements Parcelable {
     private String id, name, role, email, phoneNumber, avatar, departmentId;
 
     public EmployeeModel() {
@@ -15,6 +20,28 @@ public class EmployeeModel {
         this.avatar = avatar;
         this.departmentId = departmentId;
     }
+
+    protected EmployeeModel(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        role = in.readString();
+        email = in.readString();
+        phoneNumber = in.readString();
+        avatar = in.readString();
+        departmentId = in.readString();
+    }
+
+    public static final Creator<EmployeeModel> CREATOR = new Creator<EmployeeModel>() {
+        @Override
+        public EmployeeModel createFromParcel(Parcel in) {
+            return new EmployeeModel(in);
+        }
+
+        @Override
+        public EmployeeModel[] newArray(int size) {
+            return new EmployeeModel[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -70,5 +97,21 @@ public class EmployeeModel {
 
     public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(role);
+        dest.writeString(email);
+        dest.writeString(phoneNumber);
+        dest.writeString(avatar);
+        dest.writeString(departmentId);
     }
 }

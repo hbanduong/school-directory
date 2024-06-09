@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.zwng.android_school_directory.R;
 import com.zwng.android_school_directory.model.EmployeeModel;
 
@@ -34,6 +36,18 @@ public class EmployeeAdapter extends ArrayAdapter<EmployeeModel> {
 
         EmployeeModel employeeModel = employeeModelList.get(position);
         TextView tvName = convertView.findViewById(R.id.tvName);
-        return super.getView(position, convertView, parent);
+        TextView tvPhoneNumber = convertView.findViewById(R.id.tvPhoneNumber);
+        ImageView imvAvatar = convertView.findViewById(R.id.imvAvatar);
+
+        tvName.setText(employeeModel.getName());
+        tvPhoneNumber.setText(employeeModel.getPhoneNumber());
+
+        Glide.with(convertView)
+                .load(employeeModel.getAvatar())
+                .placeholder(R.drawable.ic_school)
+                .override(200, 200)
+                .into(imvAvatar);
+
+        return convertView;
     }
 }
