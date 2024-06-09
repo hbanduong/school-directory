@@ -68,4 +68,15 @@ public class FirebaseDatabaseHelper {
             }
         });
     }
+
+    public void deleteDepartment(String id, View view) {
+        dRefDepartment.child(id).removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Snackbar.make(view, "Xóa thành công", Snackbar.LENGTH_SHORT).show();
+            }
+            else {
+                Snackbar.make(view, "Xóa thất bại", Snackbar.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

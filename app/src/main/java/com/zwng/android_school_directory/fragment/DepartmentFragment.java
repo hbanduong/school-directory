@@ -42,6 +42,7 @@ public class DepartmentFragment extends Fragment {
         lvDepartment.setAdapter(departmentAdapter);
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+
         firebaseDatabaseHelper.loadDepartment(departmentModelList, departmentAdapter);
 
         lvDepartment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
