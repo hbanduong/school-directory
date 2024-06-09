@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.zwng.android_school_directory.R;
 import com.zwng.android_school_directory.model.DepartmentModel;
 
@@ -35,7 +37,18 @@ public class DepartmentAdapter extends ArrayAdapter<DepartmentModel> {
 
         DepartmentModel departmentModel = departmentModelList.get(position);
         TextView tvName = convertView.findViewById(R.id.tvName);
+        TextView tvPhoneNumber = convertView.findViewById(R.id.tvPhoneNumber);
+        ImageView imvLogo = convertView.findViewById(R.id.imvLogo);
+
         tvName.setText(departmentModel.getName());
+        tvPhoneNumber.setText(departmentModel.getPhoneNumber());
+
+        Glide.with(convertView)
+                .load(departmentModel.getLogo())
+                .placeholder(R.drawable.ic_school)
+                .override(200, 200)
+                .into(imvLogo);
+
         return convertView;
     }
 }
