@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "404816500648",
+    "firebase_url": "https://school-directory-android-java-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "school-directory-android-java",
+    "storage_bucket": "school-directory-android-java.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404816500648:android:8c75a7448269d8d2ecef9d",
+        "android_client_info": {
+          "package_name": "com.zwng.android_school_directory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP8OJakn_PrNkfbdDxGGCETXIlYpQ58h8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
